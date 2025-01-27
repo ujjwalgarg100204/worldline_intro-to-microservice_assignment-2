@@ -1,0 +1,50 @@
+name: microsvc__order_management_sys__order_sys
+channels:
+  - defaults
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - _libgcc_mutex=0.1=main
+  - _openmp_mutex=5.1=1_gnu
+  - annotated-types=0.6.0=py310h06a4308_0
+  - anyio=4.6.2=py310h06a4308_0
+  - bzip2=1.0.8=h5eee18b_6
+  - c-ares=1.19.1=h5eee18b_0
+  - ca-certificates=2024.12.31=h06a4308_0
+  - exceptiongroup=1.2.0=py310h06a4308_0
+  - fastapi=0.112.2=py310h06a4308_0
+  - grpcio=1.62.2=py310h6a678d5_0
+  - grpcio-tools=1.62.2=py310h12ddb61_0
+  - gunicorn=22.0.0=py310h06a4308_0
+  - idna=3.7=py310h06a4308_0
+  - ld_impl_linux-64=2.40=h12ee557_0
+  - libabseil=20240116.2=cxx17_h6a678d5_0
+  - libffi=3.4.4=h6a678d5_1
+  - libgcc-ng=11.2.0=h1234567_1
+  - libgomp=11.2.0=h1234567_1
+  - libgrpc=1.62.2=h2d74bed_0
+  - libprotobuf=4.25.3=he621ea3_0
+  - libstdcxx-ng=11.2.0=h1234567_1
+  - libuuid=1.41.5=h5eee18b_0
+  - ncurses=6.4=h6a678d5_0
+  - openssl=3.0.15=h5eee18b_0
+  - packaging=24.2=py310h06a4308_0
+  - pip=24.2=py310h06a4308_0
+  - protobuf=4.25.3=py310he36ed58_1
+  - pydantic=2.10.3=py310h06a4308_0
+  - pydantic-core=2.27.1=py310h4aa5aa6_0
+  - python=3.10.16=he870216_1
+  - re2=2022.04.01=h295c915_0
+  - readline=8.2=h5eee18b_0
+  - setuptools=75.1.0=py310h06a4308_0
+  - sniffio=1.3.0=py310h06a4308_0
+  - sqlite=3.45.3=h5eee18b_0
+  - starlette=0.38.2=py310h06a4308_0
+  - tk=8.6.14=h39e8969_0
+  - typing-extensions=4.12.2=py310h06a4308_0
+  - typing_extensions=4.12.2=py310h06a4308_0
+  - tzdata=2025a=h04d1e81_0
+  - wheel=0.44.0=py310h06a4308_0
+  - xz=5.4.6=h5eee18b_1
+  - zlib=1.2.13=h5eee18b_1
+prefix: /home/ujjwalgarg/miniconda3/envs/microsvc__order_management_sys__order_sys
