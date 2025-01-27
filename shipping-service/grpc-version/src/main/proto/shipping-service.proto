@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_outer_classname = "ShippingProto";
+option java_package = "com.ujjwalgarg.order_management_sys.grpc_version";
+
+service ShippingService {
+  rpc CalculateShippingCost(ShippingCostRequest) returns (ShippingCostResponse);
+  rpc ScheduleDelivery(DeliveryRequest) returns (DeliveryResponse);
+  rpc TrackShipment(TrackShipmentRequest) returns (TrackShipmentResponse);
+}
+
+message ShippingCostRequest {
+  string destination = 1;
+  float weight = 2;
+  string shipping_method = 3; // e.g., "standard", "express"
+}
+
+message ShippingCostResponse {
+  bool success = 1;
+  float cost = 2;
+}
+
+message DeliveryRequest {
+  string order_id = 1;
+  string shipping_method = 2;
+}
+
+message DeliveryResponse {
+  bool success = 1;
+  string delivery_date = 2;
+}
+
+message TrackShipmentRequest {
+  string tracking_id = 1;
+}
+
+message TrackShipmentResponse {
+  bool success = 1;
+  string status = 2;
+  string estimated_delivery_date = 3;
+}
