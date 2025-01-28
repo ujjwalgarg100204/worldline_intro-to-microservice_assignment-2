@@ -1,41 +1,41 @@
 syntax = "proto3";
 
 service OrderService {
-  rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse);
-  rpc GetOrder(GetOrderRequest) returns (GetOrderResponse);
-  rpc UpdateOrderStatus(UpdateOrderStatusRequest) returns (UpdateOrderStatusResponse);
+    rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse);
+    rpc GetOrder (GetOrderRequest) returns (GetOrderResponse);
+    rpc UpdateOrderStatus (UpdateOrderStatusRequest) returns (UpdateOrderStatusResponse);
 }
 
 message CreateOrderRequest {
-  string customerId = 1;
-  repeated OrderItem items = 2;
+    string customer_id = 1;
+    repeated OrderItem items = 2;
 }
 
 message CreateOrderResponse {
-  string orderId = 1;
+    string order_id = 1;
 }
 
 message GetOrderRequest {
-  string orderId = 1;
+    string order_id = 1;
 }
 
 message GetOrderResponse {
-  string orderId = 1;
-  string status = 2;
-  repeated OrderItem items = 3;
+    string order_id = 1;
+    string status = 2;
+    repeated OrderItem items = 3;
 }
 
 message UpdateOrderStatusRequest {
-  string orderId = 1;
-  string newStatus = 2;
+    string order_id = 1;
+    string new_status = 2;
 }
 
 message UpdateOrderStatusResponse {
-  bool success = 1;
+    bool success = 1;
 }
 
 message OrderItem {
-  string productId = 1;
-  int32 quantity = 2;
-  double price = 3;
+    string product_id = 1;
+    int32 quantity = 2;
+    double price = 3;
 }
