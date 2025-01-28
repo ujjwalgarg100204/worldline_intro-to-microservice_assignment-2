@@ -6,14 +6,22 @@ import type { UpdateInventoryRequest } from "../proto/UpdateInventoryRequest";
 import type { UpdateInventoryResponse } from "../proto/UpdateInventoryResponse";
 
 class InventoryService {
-  private inventory: { [key: string]: number } = {};
+  private inventory: { [key: string]: number };
+
+  constructor() {
+    // Mock inventory data
+    this.inventory = {
+      "product-1": 100,
+      "product-2": 50,
+      "product-3": 0,
+    };
+  }
 
   checkInventory(
     call: grpc.ServerUnaryCall<CheckInventoryRequest, CheckInventoryResponse>,
     callback: grpc.sendUnaryData<CheckInventoryResponse>,
   ): void {
     const { productId, quantity } = call.request;
-    logger.info(JSON.stringify({ productId, quantity }));
     if (!productId) {
       return callback(
         {
@@ -45,8 +53,6 @@ class InventoryService {
     callback: grpc.sendUnaryData<UpdateInventoryResponse>,
   ): void {
     const { productId, quantity } = call.request;
-    logger.info(JSON.stringify({ productId, quantity }));
-    logger.info(JSON.stringify(call.request));
     if (!productId) {
       return callback(
         {
