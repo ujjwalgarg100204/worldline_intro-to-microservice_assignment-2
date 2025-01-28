@@ -1,0 +1,19 @@
+{
+  "name": "http-version",
+  "module": "src/app.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun src/app.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "express": "^4.21.2",
+    "winston": "^3.17.0"
+  }
+}
