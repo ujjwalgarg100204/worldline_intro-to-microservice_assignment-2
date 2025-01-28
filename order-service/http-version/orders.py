@@ -1,20 +1,29 @@
 import uuid
 from typing import Dict
-from models import CreateOrderRequest, GetOrderResponse
+from models import CreateOrderRequest, GetOrderResponse, OrderItem
 
 # In-memory database for orders
 orders_db: Dict[str, Dict] = {
     "44de4ac1-a058-4f94-aa35-9ebfbfc429d7": {
         "status": "Pending",
-        "items": ["item1", "item2"],
+        "items": [
+            OrderItem(product_id="product-1", quantity=2, price=19.99),
+            OrderItem(product_id="product-2", quantity=1, price=9.99),
+        ],
     },
     "192d589d-b98e-496b-acea-5314fff02e7a": {
         "status": "Shipped",
-        "items": ["item3", "item4"],
+        "items": [
+            OrderItem(product_id="product-3", quantity=3, price=29.99),
+            OrderItem(product_id="product-4", quantity=2, price=14.99),
+        ],
     },
     "f68c403e-3beb-4bc4-a2a4-32a48225a054": {
         "status": "Delivered",
-        "items": ["item5", "item6"],
+        "items": [
+            OrderItem(product_id="product-5", quantity=1, price=49.99),
+            OrderItem(product_id="product-6", quantity=4, price=7.99),
+        ],
     },
 }
 

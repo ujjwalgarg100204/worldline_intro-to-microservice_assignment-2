@@ -1,7 +1,6 @@
 import uuid
 
 import grpc
-
 import order_pb2
 import order_pb2_grpc
 from logger import logger
@@ -10,18 +9,35 @@ from logger import logger
 class OrderService(order_pb2_grpc.OrderServiceServicer):
     def __init__(self):
         # In-memory storage for orders
-        self.orders = {
+        self.orders: dict[str, dict] = {
             "44de4ac1-a058-4f94-aa35-9ebfbfc429d7": {
                 "status": "Pending",
-                "items": ["item1", "item2"],
+                "items": [
+                    order_pb2.OrderItem(
+                        product_id="product-1", quantity=2, price=19.99
+                    ),
+                    order_pb2.OrderItem(product_id="product-2", quantity=1, price=9.99),
+                ],
             },
             "192d589d-b98e-496b-acea-5314fff02e7a": {
                 "status": "Shipped",
-                "items": ["item3", "item4"],
+                "items": [
+                    order_pb2.OrderItem(
+                        product_id="product-3", quantity=3, price=29.99
+                    ),
+                    order_pb2.OrderItem(
+                        product_id="product-4", quantity=2, price=14.99
+                    ),
+                ],
             },
             "f68c403e-3beb-4bc4-a2a4-32a48225a054": {
                 "status": "Delivered",
-                "items": ["item5", "item6"],
+                "items": [
+                    order_pb2.OrderItem(
+                        product_id="product-5", quantity=1, price=49.99
+                    ),
+                    order_pb2.OrderItem(product_id="product-6", quantity=4, price=7.99),
+                ],
             },
         }
         logger.info("OrderService initialized with an empty order store.")
