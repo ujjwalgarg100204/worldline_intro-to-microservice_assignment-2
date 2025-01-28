@@ -1,0 +1,27 @@
+{
+  "name": "grpc-version",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "compile:proto": "./scripts/compile-proto.sh"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/google-protobuf": "^3.15.12"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.12.5",
+    "google-protobuf": "^3.21.4",
+    "grpc-tools": "^1.12.4",
+    "protoc-gen-ts": "^0.8.7",
+    "winston": "^3.17.0"
+  },
+  "trustedDependencies": [
+    "grpc-tools",
+    "protobufjs"
+  ]
+}
